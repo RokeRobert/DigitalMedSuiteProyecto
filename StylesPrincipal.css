@@ -1,0 +1,372 @@
+/*----------------------------------------------------------------Seccion Menu----------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+/* HEADER SUPERIOR */
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: linear-gradient(to right, #6a0dad, #9b30ff); /* morado oscuro a claro */
+  }
+  
+  /* Logo + texto */
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  .logo-img {
+    width: 35px;
+    margin-right: 10px;
+  }
+  .logo-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* CONTENEDOR DE TODO DEBAJO DEL HEADER */
+  .container {
+    display: flex;
+    margin-top: 60px; /* espacio para el header */
+    height: calc(100vh - 60px);
+  }
+  
+  /* SIDEBAR LATERAL */
+  .sidebar {
+    width: 250px;
+    background: linear-gradient(to bottom, #800080, #4b0082); /* de morado a índigo */
+    display: flex;
+    flex-direction: column;
+    color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.collapsed {
+    width: 70px;
+  }
+  
+  .sidebar.collapsed .nav-links a span,
+  .sidebar.collapsed .logout {
+    display: none;
+  }
+  
+  /* Botón de menú */
+  .menu-btn {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #800080;
+    text-align: center;
+    cursor: pointer;
+    
+  }
+
+  .menu-btn:hover{
+    background-color: #6a0dad;
+    filter: brightness(1.2);
+  }
+
+  .menu-btn img {
+    width: 30px;
+  }
+  
+  /* LINKS DEL MENÚ */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav-links a:hover{
+    background-color: #6a0dad;   /* Cambia a un morado más claro */
+    color: #ffffff;              /* Cambia el color del texto */
+    transition: background-color 0.3s ease;
+    filter: brightness(1.2);
+  }
+  .nav-links a img {
+    width: 24px;         /* ancho fijo */
+    height: 24px;        /* alto fijo */
+    object-fit: contain; /* asegura que la imagen no se distorsione */
+    flex-shrink: 0;
+
+  }
+  .nav-links a span {
+    margin-left: 15px;
+  }
+  
+  /* BOTÓN DE CERRAR SESIÓN */
+  .logout {
+    margin-top: auto;
+    padding: 20px;
+  }
+  .logout button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #800080;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* CONTENIDO PRINCIPAL */
+  .main-content {
+    flex: 1;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+
+  .topbar {
+    width: 100%;
+    height: 60px;
+    background-color: #5417b4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* LOGO a la izquierda, NOTIFS a la derecha */
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  /* Nueva sección de notificaciones */
+  .notification-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-icon {
+    width: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .notification-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-links a:hover {
+    background-color: #6a0dad;  /* tono más claro o diferente del púrpura */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .page {
+    display: none;
+  }
+  
+  .page.active {
+    display: block;
+  }
+
+
+/*------------------------------------------------------------------Fin Seccion Menu-----------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------Seccion Principal-----------------------------------------------------------------------*/
+
+  .dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    height: calc(100vh - 170px); /* alto total ajustado */
+  }
+  
+  /* PANEL IZQUIERDO */
+  .citas-hoy {
+    flex: 2;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .citas-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .citas-titulo img {
+    width: 30px;
+  }
+  .citas-lista {
+    margin-top: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cita {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fefefe;
+  }
+  
+  /* PANEL DERECHO */
+  .resumen-derecho {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tarjeta {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .tarjeta img {
+    width: 35px;
+  }
+  .tarjeta.alerta {
+    border-color: black;
+  }
+  .tarjeta strong{
+    margin-left: 40px;
+  }
+  .tarjeta p{
+    margin-left: 40px;
+  }
+  
+  .tarjeta.vacía {
+    flex-grow: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid #000;
+    overflow-y: auto;
+  }
+  
+ 
+
+  
+/*Botones*/
+  
+  .botones-panel {
+    display: flex;
+    justify-content: center;     /* CENTRADOS horizontalmente */
+    align-items: center;
+    gap: 20px;                   /* Espacio entre botones */
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .botones-panel img {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+  }
+
+  .btn {
+    background-color: #800080;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+  
+    display: flex;              
+    align-items: center;        
+    gap: 8px;                  
+  }
+  
+  .btn:hover {
+    background-color: #9b30ff;
+  }
+
+
+  /* Calendario ocupa bien el espacio y es responsivo */
+#calendar {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Cabecera del calendario (meses, botones) */
+.fc-toolbar-title {
+  font-size: 1.2rem;
+  color: #4b0082;
+}
+
+.fc-button {
+  background-color: #800080;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.fc-button:hover {
+  background-color: #5e005e;
+}
+
+.fc-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Días del calendario */
+.fc-daygrid-day-number {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+/* Evento de prueba */
+.fc-event {
+  background-color: #8a2be2;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+}
+
+/* Fuerza mayúscula en el título del calendario (como "mayo 2025") */
+.fc-toolbar-title {
+  text-transform: capitalize;
+}
+
+  /*-----------------------------------------------------------------------Fin Seccion Principal-----------------------------------------------------------------------*/

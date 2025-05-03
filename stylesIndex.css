@@ -1,0 +1,124 @@
+/* Estilo general del cuerpo */
+body {
+    background-color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Contenedor principal del login */
+  .login-container {
+    background-color: #d4d4d4;
+    padding: 40px 30px;
+    border-radius: 40px;
+    text-align: center;
+    width: 350px;
+  }
+  
+  /* Estilo del título principal */
+  .login-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Logo */
+  .logo {
+    width: 80px;
+    margin: 10px auto;
+  }
+  
+  /* Subtítulo debajo del logo */
+  .login-container h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  /* Formulario de login */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Etiquetas de los campos */
+  label {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Campos de texto (correo y contraseña) */
+  input[type="password"],
+  input[type="text"],
+  input[type="email"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: white;
+    outline: none;
+    box-sizing: border-box;
+    color: black;
+  }
+  
+  /* Contenedor para el campo de contraseña e ícono del ojo */
+  .password-container {
+    position: relative;
+  }
+  
+  /* Ícono del ojo para mostrar/ocultar contraseña */
+  .eye-icon {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    cursor: pointer;
+  }
+  
+  /* Botón de iniciar sesión */
+  button {
+    margin-top: 15px;
+    background-color: #a032a0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Efecto hover para el botón */
+  button:hover {
+    background-color: #880d88;
+  }
+  
+  /* Enlace de "¿Olvidaste tu contraseña?" */
+  .forgot {
+    margin-top: 10px;
+    display: block;
+    font-size: 0.9em;
+    color: #444;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+  }
+  
+  /* Subrayado al pasar el cursor */
+  .forgot:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Íconos pequeños antes del texto (sobre, candado) */
+  .icon {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+ 

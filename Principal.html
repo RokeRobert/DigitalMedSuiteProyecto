@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitalMedSuite</title>
+  <link rel="stylesheet" href="StylesPrincipal.css">
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+ 
+</head>
+<body>
+    <!-- HEADER superior, fijo horizontal -->
+    <header class="topbar">
+        <div class="logo-section">
+            <img src="Imagenes/logo.png" alt="Logo" class="logo-img">
+          <span class="logo-text">DigitalMedSuite</span>
+        </div>
+      
+        <!-- Notificaciones al lado derecho -->
+        <div class="notification-section">
+          <img src="Imagenes/ificaciones.png" alt="Notificaciones" class="notification-icon">
+        </div>
+      </header>
+  
+    <!-------------------------------------------------------- CONTENIDO debajo del header -------------------------------------------------------------------->
+    <div class="container">
+      <!-- Sidebar lateral izquierdo -->
+      <aside class="sidebar" id="sidebar">
+        <div class="menu-btn" onclick="toggleMenu()">
+            <img src="Imagenes/menu.png" alt="Menú">
+        </div>
+        <nav class="nav-links">
+            <a href="#" onclick="showPage('home')"><img src="Imagenes/Home.png"><span>Home</span></a>
+            <a href="#" onclick="showPage('citas')"><img src="Imagenes/citas.png"><span>Citas</span></a>
+            <a href="#" onclick="showPage('pacientes')"><img src="Imagenes/expedientes.png"><span>Pacientes</span></a>
+            <a href="#" onclick="showPage('usuarios')"><img src="Imagenes/users.png"><span>Usuarios</span></a>
+        </nav>
+        <div class="logout">
+          <button>Cerrar Sesión</button>
+        </div>
+      </aside>
+  
+      <!-- Área de contenido -->
+      <main class="main-content">
+        <!-------------------------------------------------------- CONTENIDO del DashBoard-------------------------------------------------------------------->
+        <section id="home" class="page active">
+  <div class="dashboard-container">
+
+    <!-- Citas de Hoy -->
+    <div class="citas-hoy">
+      <div class="citas-titulo">
+        <img src="Imagenes/icono-citas.png" alt="Ícono Citas">
+        <h2>Citas De Hoy</h2>
+      </div>
+      <hr>
+      <div class="citas-lista">
+        <div class="cita">
+          <p><strong>Nombre:</strong> ..............</p>
+          <p><strong>Hora:</strong> ..............</p>
+          <p><strong>Médico Asignado:</strong> ..............</p>
+        </div>
+        <!-- Repite más .cita aquí si quieres -->
+      </div>
+    </div>
+
+    <!-- Panel derecho -->
+    <div class="resumen-derecho">
+      <div class="tarjeta">
+        <img src="Imagenes/pacientes.png" alt="Pacientes">
+        <div>
+          <strong>Pacientes Registrados</strong>
+          <p>25 pacientes activos</p>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <img src="Imagenes/expedientesactualizados.png" alt="Expedientes">
+        <div>
+          <strong>Expedientes Modificados</strong>
+          <p>3 actualizados hoy</p>
+        </div>
+      </div>
+
+      <div class="tarjeta alerta">
+        <img src="Imagenes/alerta.png" alt="Alerta">
+        <div>
+          <strong>Citas no Honradas</strong>
+          <p>2 pacientes no llegaron</p>
+        </div>
+      </div>
+
+      <div class="tarjeta vacía">
+        <h3 style="text-align:center;">Calendario</h3>
+        <div id='calendar'></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="botones-panel">
+    <button class="btn"><img src="Imagenes/nueva-cita.png"> Nueva Cita</button>
+    <button class="btn"><img src="Imagenes/agregar-paciente.png"> Registrar Paciente</button>
+    <button class="btn"><img src="Imagenes/ver-expediente.png"> Ver Expedientes</button>
+  </div>
+</section>
+      <!-------------------------------------------------------- CONTENIDO Apartado de Citas -------------------------------------------------------------------->
+        <section id="citas" class="page">
+          <h1>Citas</h1>
+          <p>Administración de citas.</p>
+        </section>
+      <!-------------------------------------------------------- CONTENIDO Apartado Expedientes ------------------------------------------------------------------>
+        <section id="pacientes" class="page">
+          <h1>Pacientes</h1>
+          <p>Lista de expedientes clínicos.</p>
+        </section>
+      <!-------------------------------------------------------- CONTENIDO Apartado Usuarios -------------------------------------------------------------------->
+        <section id="usuarios" class="page">
+          <h1>Usuarios</h1>
+          <p>Gestión de usuarios del sistema.</p>
+        </section>
+      </main>
+    </div>
+    
+    <!--mi sript-->
+
+    <script src="scriptPrincipal.js"></script>
+  </body>
+</html>

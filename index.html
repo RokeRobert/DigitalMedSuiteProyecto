@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - DigitalMedSuite</title>
+
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="stylesIndex.css">
+</head>
+<body>
+
+  <!-- Contenedor principal del formulario -->
+  <div class="login-container">
+
+    <!-- Título principal -->
+    <h1>Bienvenido</h1>
+
+    <!-- Logo del sistema -->
+    <img src="Imagenes/logo.png" alt="Logo" class="logo">
+
+    <!-- Nombre del sistema -->
+    <h2>DigitalMedSuite</h2>
+
+    <!-- Formulario de inicio de sesión -->
+    <form>
+
+      <!-- Etiqueta e ícono para el correo -->
+      <label for="email">
+        <img src="Imagenes/email.png" alt="icono sobre" class="icon"> Correo Electronico:
+      </label>
+      <input type="email" id="email" required>
+
+      <!-- Etiqueta e ícono para la contraseña -->
+      <label for="password">
+        <img src="Imagenes/candado.png" alt="icono candado" class="icon"> Contraseña:
+      </label>
+
+      <!-- Contenedor de contraseña con ícono de mostrar/ocultar -->
+      <div class="password-container">
+        <input type="password" id="password" required>
+        <img src="Imagenes/ojocerrado.png" id="toggleIcon" alt="Mostrar contraseña" class="eye-icon" onclick="togglePassword()">
+      </div>
+
+      <!-- Botón para iniciar sesión -->
+      <button type="button" id="submit">Iniciar Sesión</button>
+      
+
+      <!-- Enlace para recuperar contraseña -->
+      <a href="#" class="forgot">¿Olvidaste tu Contraseña?</a>
+
+    </form>
+  </div>
+
+  <!-- Enlace al archivo JavaScript -->
+  <script src="scriptIndex.js"></script>
+</body>
+</html>
