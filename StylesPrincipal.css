@@ -223,10 +223,30 @@
     gap: 12px;
   }
   .cita {
-    border: 2px solid #000;
+    border: 2px solid black;
+    padding: 10px 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
-    padding: 10px;
-    background: #fefefe;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .cita .dato {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .cita .dato strong {
+    width: 170px;
+    display: inline-block;
+    color: #333;
+  }
+  
+  .cita .dato span {
+    color: #555;
   }
   
   /* PANEL DERECHO */
@@ -370,3 +390,211 @@
 }
 
   /*-----------------------------------------------------------------------Fin Seccion Principal-----------------------------------------------------------------------*/
+  /*-----------------------------------------------------------------------Seccion Citas-------------------------------------------------------------------------------*/
+
+  /* Contenedor general del módulo */
+.modulo-citas {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ======================== */
+/* PANEL IZQUIERDO         */
+/* ======================== */
+.panel-izquierdo {
+  flex: 1;
+  background: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 320px;
+}
+
+/* Filtros de fecha (Hoy, Mañana, Esta semana) */
+.filtros-fecha {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #999;
+  padding-bottom: 10px;
+}
+
+.filtro-fecha {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.filtro-fecha.activo {
+  color: #800080;
+}
+
+.filtro-fecha.activo::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #800080;
+}
+
+/* Lista de citas (scroll si son muchas) */
+.lista-citas {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.lista-citas .cita {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.lista-citas .cita:hover {
+  background-color: #f3e7ff;
+}
+
+.lista-citas .cita.seleccionada {
+  background-color: #d1a8f5;
+  border-color: #800080;
+}
+
+/* Contenido interno de cada cita */
+.cita .dato {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.cita .dato strong {
+  width: 150px;
+}
+
+/* ======================== */
+/* PANEL DERECHO            */
+/* ======================== */
+.panel-derecho {
+  flex: 1;
+  background: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 320px;
+}
+
+/* Buscador */
+.buscador-citas label {
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.busqueda-input {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+#busquedaCita {
+  flex: 1;
+  padding: 8px 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  font-size: 1em;
+}
+
+#btnBuscar {
+  background-color: #800080;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+#btnBuscar img {
+  height: 20px;
+  width: 20px;
+}
+
+/* Resultado cita (cuadro blanco a la derecha) */
+.resultado-cita {
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 15px;
+  min-height: 200px;
+  background-color: white;
+}
+
+/* ======================== */
+/* BOTONES INFERIORES      */
+/* ======================== */
+.botones-citas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.botones-citas .btn {
+  background-color: #800080;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease;
+}
+
+.botones-citas .btn:hover {
+  background-color: #9b30ff;
+}
+
+.botones-citas .btn img {
+  height: 20px;
+  width: 20px;
+}
+
+.filtros-busqueda {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.filtro-busqueda {
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+.filtro-busqueda {
+  cursor: pointer;
+  font-weight: bold;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.filtro-busqueda.activo {
+  color: #800080;
+  text-decoration: underline;
+}
+
+/*-----------------------------------------------------------------------Fin Seccion Citas-----------------------------------------------------------------------*/

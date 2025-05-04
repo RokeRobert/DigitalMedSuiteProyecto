@@ -47,21 +47,16 @@
   <div class="dashboard-container">
 
     <!-- Citas de Hoy -->
-    <div class="citas-hoy">
-      <div class="citas-titulo">
-        <img src="Imagenes/icono-citas.png" alt="Ícono Citas">
-        <h2>Citas De Hoy</h2>
-      </div>
-      <hr>
-      <div class="citas-lista">
-        <div class="cita">
-          <p><strong>Nombre:</strong> ..............</p>
-          <p><strong>Hora:</strong> ..............</p>
-          <p><strong>Médico Asignado:</strong> ..............</p>
-        </div>
-        <!-- Repite más .cita aquí si quieres -->
-      </div>
-    </div>
+<div class="citas-hoy">
+  <div class="citas-titulo">
+    <img src="Imagenes/icono-citas.png" alt="Ícono Citas">
+    <h2>Citas De Hoy</h2>
+  </div>
+  <hr>
+  <div class="citas-lista" id="citasListaHoy">
+    <!-- Las citas de hoy se insertan aquí -->
+  </div>
+</div>
 
     <!-- Panel derecho -->
     <div class="resumen-derecho">
@@ -104,10 +99,52 @@
   </div>
 </section>
       <!-------------------------------------------------------- CONTENIDO Apartado de Citas -------------------------------------------------------------------->
-        <section id="citas" class="page">
-          <h1>Citas</h1>
-          <p>Administración de citas.</p>
-        </section>
+      <section id="citas" class="page">
+        <div class="modulo-citas">
+      
+          <!-- Panel Izquierdo: Filtros y lista de citas -->
+          <div class="panel-izquierdo">
+            <div class="filtros-fecha">
+              <button class="filtro-fecha activo" data-filtro="hoy">Hoy</button>
+              <button class="filtro-fecha" data-filtro="manana">Mañana</button>
+              <button class="filtro-fecha" data-filtro="semana">Esta semana</button>
+            </div>
+      
+            <div class="lista-citas" id="listaCitas">
+              <!-- Las citas se insertarán dinámicamente -->
+            </div>
+          </div>
+      
+          <!-- Panel Derecho: Buscador y detalle -->
+          <div class="panel-derecho">
+            <div class="buscador-citas">
+              <div class="filtros-busqueda">
+                <label class="filtro-busqueda activo" data-filtro="paciente">Paciente</label>
+                <label class="filtro-busqueda" data-filtro="medico">Médico</label>
+              </div>
+            
+              <div class="busqueda-input">
+                <input type="text" id="busquedaCita" placeholder="Buscar por nombre...">
+                <button id="btnBuscar"><img src="Imagenes/buscar.png" alt="Buscar" /></button>
+              </div>
+            </div>
+      
+            <div class="resultado-cita" id="resultadoCita">
+              <!-- Aquí se mostrará la cita seleccionada o encontrada -->
+            </div>
+          </div>
+        </div>
+      
+        <!-- Botones inferiores -->
+        <div class="botones-citas">
+          <button class="btn" id="btnNuevaCita">
+            <img src="Imagenes/nueva-cita.png" alt="+"> Nueva Cita
+          </button>
+          <button class="btn" id="btnModificarCita" disabled>
+            <img src="Imagenes/modificar.png" alt="⚙️"> Modificar
+          </button>
+        </div>
+      </section>
       <!-------------------------------------------------------- CONTENIDO Apartado Expedientes ------------------------------------------------------------------>
         <section id="pacientes" class="page">
           <h1>Pacientes</h1>
@@ -124,5 +161,6 @@
     <!--mi sript-->
 
     <script src="scriptPrincipal.js"></script>
+    <script src="scriptCitas.js"></script>
   </body>
 </html>

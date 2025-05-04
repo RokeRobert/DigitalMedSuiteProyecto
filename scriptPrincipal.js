@@ -15,9 +15,8 @@ function showPage(pageId) {
       selectedPage.classList.add('active');
     }
   }
+
   //Calendario
-
-
   document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
   
